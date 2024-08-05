@@ -30,7 +30,7 @@ podman run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  quay.io/ucomesdag/fedora:40
+  quay.io/ucomesdag/fedora:39
 ```
 
 <!-- container image -->

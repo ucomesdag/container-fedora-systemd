@@ -2,13 +2,14 @@ FROM fedora:rawhide
 
 ARG BUILD_DATE
 
+LABEL summary="Fedora Systemd Container Image."
 LABEL maintainer="Uco Mesdag <uco@mesd.ag>"
-LABEL build_date=${BUILD_DATE}
+LABEL build-date=${BUILD_DATE}
 
 ENV container=podman
 
 # Enable systemd and install required packages.
-RUN dnf --nogpgcheck -y install systemd && dnf clean all && \
+RUN dnf -y install systemd python3 python3-libdnf5 && dnf clean all && \
   (cd /lib/systemd/system/sysinit.target.wants/ ; for i in * ; do [ $i = systemd-tmpfiles-setup.service ] || rm -f $i ; done) ; \
   rm -f /lib/systemd/system/multi-user.target.wants/* ;\
   rm -f /etc/systemd/system/*.wants/* ;\

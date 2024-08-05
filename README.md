@@ -12,10 +12,10 @@ This repository has multiple branches that relate to Fedora versions.
 
 |Branch |Fedora Version|Container image tag|
 |-------|--------------|-------------------|
-|33     |33            |33                 |
-|34     |latest (34)   |34                 |
-|main   |latest (35)   |latest             |
-|rawhide|rawhide (36)  |rawhide            |
+|rawhide|rawhide       |rawhide            |
+|main   |latest (41)   |latest             |
+|40     |40            |40                 |
+|39     |39            |39                 |
 
 Pull strategy
 -------------
@@ -30,7 +30,7 @@ podman run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  quay.io/ucomesdag/fedora:34
+  quay.io/ucomesdag/fedora:rawhide
 ```
 
 <!-- container image -->
